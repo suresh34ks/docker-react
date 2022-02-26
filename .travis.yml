@@ -1,0 +1,9 @@
+sudo: required
+services: 
+  - docker
+
+before_install:
+  - docker build -t suresh34ks/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run suresh34ks/docker-react npm run test -- --coeverge
